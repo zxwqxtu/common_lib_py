@@ -49,3 +49,37 @@ def parseRmbCent(priceString):
 
     return int(round(parseFloat(priceString) * 100, 0))
 
+"""
+一般报表
+result = [{'k': 'k', 'kk': 'kk'},]
+keys = ['kk', 'k']
+keyDesc = {'k': u'单k', 'kk': u'双k'}
+"""
+def excelXlsx(result, keys, keyDesc):
+    import xlsxwriter, io
+
+    sf = io.BytesIO()
+    workbook = xlsxwriter.Workbook(sf, {'constant_memory': True})
+    sheet = workbook.add_worksheet()
+
+    xIndex = 0
+    for nn, key in enumerate(keys):
+        sheet.write(xIndex, nn, keyDesc.get(key, ''))
+
+    for item in result:
+        xIndex += 1
+        for nn, key in enumerate(keys):
+            sheet.write(xIndex, nn, item.get(key, ''))
+    workbook.close()
+
+    content = sf.getvalue()
+    sf.close()
+    return content
+
+def getFileSuffix(name):
+    suffix = ""
+    index = name.rfind('.')
+    if index > -1:
+        suffix = name[index:]
+    return suffix
+
