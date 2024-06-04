@@ -1,0 +1,4 @@
+dist/
+*.swp
+.pypirc
+src/*.egg-info
