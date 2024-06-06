@@ -4,7 +4,7 @@
 
 [project]
 name = "common_lib_zxwqxtu"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="zxwqxtu", email="zxwqxtu@outlook.com" },
 ]

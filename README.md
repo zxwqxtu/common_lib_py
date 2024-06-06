@@ -16,3 +16,7 @@ This is a simple example package.
 ## Uploading distribution files to PyPI
 1. python3 -m pip install --upgrade twine
 2. python3 -m twine upload --repository testpypi dist/*
+
+## python setup.py install 安装
+1. cd src
+2. python setup.py install 

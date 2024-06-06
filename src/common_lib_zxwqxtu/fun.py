@@ -4,6 +4,9 @@ import json, copy
 def explode(splitString, string):
     return string.split(splitString) if string else []
 
+def explodeInt(splitString, string):
+    return list(map(parseInt, filter(lambda l: l != '', explode(splitString, string))))
+
 def implode(joinString, arr):
     return joinString.join(list(map(str, arr)))
 

@@ -17,7 +17,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='common_lib_zxwqxtu',
-    version="0.0.2",
+    version="0.0.3",
     description='A small example package',
     long_description=open(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'README.md'), encoding='utf-8').read(),
     long_description_content_type='text/markdown',
